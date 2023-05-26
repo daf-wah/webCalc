@@ -1,0 +1,177 @@
+:root {
+  --grey-10: hsl(0, 0%, 80%);
+  --grey-20: hsl(0, 0%, 60%);
+  --grey-50: hsl(0, 0%, 50%);
+  --grey-60: hsl(0, 0%, 40%);
+  --grey-70: hsl(0, 0%, 20%);
+  --grey-90: hsl(0, 0%, 10%);
+
+  --redOrange-10: hsl(16, 90%, 80%);
+  --redOrange-20: hsl(16, 90%, 60%);
+  --redOrange-50: hsl(16, 90%, 50%);
+  --redOrange-60: hsl(16, 90%, 40%);
+  --redOrange-70: hsl(16, 90%, 30%);
+  --redOrange-80: hsl(16, 90%, 20%);
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  background: linear-gradient(
+    236deg,
+    rgba(194, 175, 213, 1) 0%,
+    rgba(130, 207, 201, 1) 98%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  font: inherit;
+  outline: none;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: none;
+  border: none;
+}
+
+.calculator {
+  box-shadow: 0, 0, 25px, var(--grey-90);
+  width: 30%;
+  max-width: 80vw;
+}
+
+.calculator__output {
+  background-color: var(--grey-70);
+  color: var(--grey-10);
+  text-align: right;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.previous-operand {
+  font-size: 1.125rem;
+  margin-bottom: 1em;
+}
+
+.current-operand {
+  color: white;
+  font-size: 2rem;
+}
+
+.calculator__keys {
+  font-size: 4rem;
+  display: grid;
+  background-color: var(--grey-90);
+  border-radius: 2rem;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas:
+    'clear clear delete divide'
+    'seven eight nine times'
+    'four five six plus'
+    'one two three minus'
+    'zero decimal equal equal';
+  gap: 2px;
+}
+
+.clear {
+  grid-area: clear;
+  background-color: var(--redOrange-50);
+}
+
+.clear:active {
+  background-color: var(--redOrange-10);
+}
+
+.delete {
+  grid-area: delete;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.times {
+  grid-area: times;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.zero {
+  grid-area: zero;
+  border-radius: 0 0 0 1rem;
+}
+
+.decimal {
+  grid-area: decimal;
+}
+
+.equal {
+  grid-area: equal;
+  border-radius: 0 0 1rem 0;
+}
+.equal:active,
+.delete:active {
+  background-color: var(--grey-60);
+}
+
+[data-operation] {
+  background-color: var(--grey-60);
+}
+[data-number] {
+  background-color: var(--grey-10);
+}
+[data-number]:active {
+  background-color: var(--grey-50);
+}
+
+[data-operation]:active {
+  background-color: var(--grey-10);
+}
